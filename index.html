@@ -473,84 +473,6 @@ body::after {
 #import-file { display: none; }
 .modal-close { position: absolute; top: 16px; right: 16px; background: var(--bg4); border: 1px solid var(--b1); border-radius: 8px; color: var(--text2); padding: 5px 10px; font-size: 12px; cursor: pointer; }
 
-/* SETUP BANNER */
-.setup-banner {
-  display: none;
-  position: fixed; top: 58px; left: 0; right: 0; z-index: 150;
-  background: linear-gradient(135deg, rgba(157,0,255,0.15), rgba(0,245,255,0.1));
-  border-bottom: 1px solid rgba(157,0,255,0.3);
-  padding: 10px 16px;
-  align-items: center; gap: 10px; flex-wrap: wrap;
-  backdrop-filter: blur(10px);
-}
-.setup-banner-text { font-size: 12px; color: var(--text2); font-family: var(--fm); flex: 1; min-width: 0; }
-.setup-banner-text strong { color: var(--cyan); }
-.setup-banner-actions { display: flex; gap: 6px; flex-wrap: wrap; flex-shrink: 0; }
-.setup-link {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 6px 12px; border-radius: 7px; font-size: 11px;
-  font-family: var(--fb); font-weight: 600; cursor: pointer;
-  text-decoration: none; transition: all 0.15s; white-space: nowrap;
-}
-.setup-link-github {
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: var(--text);
-}
-.setup-link-github:hover { background: rgba(255,255,255,0.15); }
-.setup-link-cloudflare {
-  background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.3); color: var(--orange);
-}
-.setup-link-cloudflare:hover { background: rgba(249,115,22,0.25); }
-.setup-link-docs {
-  background: rgba(0,245,255,0.1); border: 1px solid rgba(0,245,255,0.25); color: var(--cyan);
-}
-.setup-link-docs:hover { background: rgba(0,245,255,0.2); }
-.setup-dismiss { background: transparent; border: none; color: var(--text3); cursor: pointer; font-size: 16px; padding: 0 4px; }
-
-/* SETUP SCREEN */
-.setup-screen {
-  padding: 20px 16px 100px; max-width: 600px; margin: 0 auto; width: 100%;
-}
-.setup-step {
-  background: var(--bg3); border: 1px solid var(--b1);
-  border-radius: var(--r2); padding: 18px; margin-bottom: 12px;
-  display: flex; gap: 14px; align-items: flex-start;
-}
-.setup-step-num {
-  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--fh); font-size: 13px; font-weight: 700;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
-  color: white;
-}
-.setup-step-body { flex: 1; }
-.setup-step-title { font-family: var(--fh); font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-.setup-step-desc { font-size: 12px; color: var(--text2); line-height: 1.7; margin-bottom: 10px; }
-.setup-step-links { display: flex; gap: 8px; flex-wrap: wrap; }
-.setup-code {
-  background: var(--bg4); border: 1px solid var(--b1); border-radius: 7px;
-  padding: 8px 12px; font-family: var(--fm); font-size: 11px; color: var(--teal);
-  margin-top: 8px; word-break: break-all; display: flex; align-items: center;
-  justify-content: space-between; gap: 8px;
-}
-.copy-code-btn {
-  background: rgba(0,245,255,0.08); border: 1px solid rgba(0,245,255,0.2);
-  border-radius: 5px; padding: 3px 8px; color: var(--cyan); font-size: 10px;
-  cursor: pointer; font-family: var(--fm); flex-shrink: 0; white-space: nowrap;
-}
-.input-worker {
-  width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--b1);
-  border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: var(--fm);
-  font-size: 12px; outline: none; margin-top: 8px;
-}
-.input-worker:focus { border-color: rgba(0,245,255,0.4); }
-.save-worker-btn {
-  margin-top: 8px; width: 100%; padding: 10px; border-radius: 8px; border: none;
-  background: linear-gradient(135deg, var(--purple), var(--cyan2));
-  color: white; font-family: var(--fh); font-size: 13px; font-weight: 700;
-  cursor: pointer; transition: all 0.2s;
-}
-.save-worker-btn:hover { filter: brightness(1.1); }
-
 /* NOTIFICATION TOAST */
 .toast {
   position: fixed; top: 70px; left: 50%; transform: translateX(-50%) translateY(-10px);
@@ -634,27 +556,7 @@ body::after {
     </div>
   </div>
 
-  <!-- SETUP BANNER -->
-<div class="setup-banner" id="setup-banner">
-  <div class="setup-banner-text">
-    <strong>Setup Required</strong> — Connect to Cloudflare to unlock Claude AI analysis
-  </div>
-  <div class="setup-banner-actions">
-    <a class="setup-link setup-link-github" href="https://github.com/new" target="_blank">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      GitHub
-    </a>
-    <a class="setup-link setup-link-cloudflare" href="https://dash.cloudflare.com" target="_blank">
-      ☁ Cloudflare
-    </a>
-    <button class="setup-link setup-link-docs" onclick="showSetupGuide()">
-      📋 Setup Guide
-    </button>
-    <button class="setup-dismiss" onclick="document.getElementById('setup-banner').style.display='none'" title="Dismiss">✕</button>
-  </div>
-</div>
-
-<div class="main">
+  <div class="main">
     <div class="hustle-header">
       <div>
         <div class="hustle-title">Your Hustles</div>
@@ -842,128 +744,6 @@ body::after {
   <div class="ai-body" id="deployed-body"></div>
 </div>
 
-<!-- SETUP GUIDE SCREEN -->
-<div id="screen-setup" class="app screen">
-  <div class="screen-header">
-    <button class="back-btn" onclick="showHome()">←</button>
-    <div>
-      <div class="screen-title">Connect to Cloudflare</div>
-    </div>
-  </div>
-  <div class="setup-screen">
-
-    <div style="text-align:center;padding:16px 0 24px">
-      <div style="font-family:var(--fh);font-size:20px;font-weight:800;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">3 Steps to Go Live</div>
-      <div style="font-size:12px;color:var(--text3);font-family:var(--fm)">GitHub → Cloudflare Worker → Cloudflare Pages</div>
-    </div>
-
-    <!-- STEP 1: GITHUB -->
-    <div class="setup-step">
-      <div class="setup-step-num">1</div>
-      <div class="setup-step-body">
-        <div class="setup-step-title">Create a GitHub Repo</div>
-        <div class="setup-step-desc">
-          GitHub stores your files. Cloudflare reads from GitHub to deploy automatically.
-          You only need to do this once — after that, any file you update in GitHub auto-deploys.
-        </div>
-        <div class="setup-step-links">
-          <a class="setup-link setup-link-github" href="https://github.com/new" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            Create GitHub Repo →
-          </a>
-          <a class="setup-link setup-link-docs" href="https://github.com/login" target="_blank">
-            Login to GitHub →
-          </a>
-        </div>
-        <div class="setup-code">
-          <span>Repo name suggestion: hustle-app</span>
-        </div>
-        <div style="font-size:11px;color:var(--text3);margin-top:8px;font-family:var(--fm)">
-          After creating repo: upload hustle_app.html and hustle_worker.js to it using the Add File button on GitHub.com — no terminal needed.
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 2: WORKER -->
-    <div class="setup-step">
-      <div class="setup-step-num">2</div>
-      <div class="setup-step-body">
-        <div class="setup-step-title">Deploy the Cloudflare Worker</div>
-        <div class="setup-step-desc">
-          The Worker is a tiny 50-line file that connects HUSTLE$ to Claude API securely.
-          Your Anthropic API key lives in the Worker — never in the HTML file.
-        </div>
-        <div class="setup-step-links">
-          <a class="setup-link setup-link-cloudflare" href="https://dash.cloudflare.com/?to=/:account/workers/services/new" target="_blank">
-            ☁ Create Worker →
-          </a>
-          <a class="setup-link setup-link-docs" href="https://console.anthropic.com/settings/keys" target="_blank">
-            Get Anthropic Key →
-          </a>
-        </div>
-        <div style="font-size:11px;color:var(--text2);margin-top:10px;line-height:1.8;font-family:var(--fm)">
-          <div style="color:var(--cyan);margin-bottom:4px;font-size:10px;letter-spacing:1px">IN CLOUDFLARE WORKERS DASHBOARD:</div>
-          <div>1. Click "Create Worker" → name it <strong>hustle-worker</strong></div>
-          <div>2. Click "Edit Code" → paste contents of hustle_worker.js</div>
-          <div>3. Click "Save and Deploy"</div>
-          <div>4. Go to Settings → Variables → Add Variable</div>
-          <div>5. Name: <strong style="color:var(--teal)">ANTHROPIC_KEY</strong> · Type: Secret · Value: your key</div>
-          <div>6. Copy your Worker URL (looks like: hustle-worker.YOUR-NAME.workers.dev)</div>
-        </div>
-        <div style="margin-top:10px">
-          <div style="font-size:10px;font-family:var(--fm);color:var(--purple);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px">Paste Your Worker URL Here</div>
-          <input class="input-worker" id="worker-url-input" placeholder="https://hustle-worker.YOUR-NAME.workers.dev" oninput="previewWorkerUrl(this.value)">
-          <button class="save-worker-btn" onclick="saveWorkerUrl()">Save Worker URL + Activate</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 3: PAGES -->
-    <div class="setup-step">
-      <div class="setup-step-num">3</div>
-      <div class="setup-step-body">
-        <div class="setup-step-title">Deploy App to Cloudflare Pages</div>
-        <div class="setup-step-desc">
-          This puts HUSTLE$ on the internet — accessible from any device including your iPhone.
-          Connect your GitHub repo and Cloudflare handles the rest automatically.
-        </div>
-        <div class="setup-step-links">
-          <a class="setup-link setup-link-cloudflare" href="https://dash.cloudflare.com/?to=/:account/pages/new/provider/github" target="_blank">
-            ☁ Connect GitHub to Pages →
-          </a>
-        </div>
-        <div style="font-size:11px;color:var(--text2);margin-top:10px;line-height:1.8;font-family:var(--fm)">
-          <div style="color:var(--cyan);margin-bottom:4px;font-size:10px;letter-spacing:1px">IN CLOUDFLARE PAGES:</div>
-          <div>1. Click "Connect to Git" → authorize GitHub</div>
-          <div>2. Select your hustle-app repo</div>
-          <div>3. Framework preset: None</div>
-          <div>4. Build command: leave blank</div>
-          <div>5. Build output: leave blank</div>
-          <div>6. Click "Save and Deploy"</div>
-          <div>7. Your URL: <strong style="color:var(--teal)">hustle-app.pages.dev</strong></div>
-        </div>
-        <div style="margin-top:10px;padding:10px;background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:8px">
-          <div style="font-size:11px;color:var(--teal);font-family:var(--fm)">
-            After deploy — open hustle-app.pages.dev in Safari on iPhone → Share → Add to Home Screen → HUSTLE$ works like a native app
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ALREADY HAVE WORKER URL -->
-    <div class="setup-step" style="border-color:rgba(0,245,255,0.2)">
-      <div class="setup-step-num" style="background:linear-gradient(135deg,var(--teal),var(--blue))">?</div>
-      <div class="setup-step-body">
-        <div class="setup-step-title">Already Have a Worker URL?</div>
-        <div class="setup-step-desc">If you already deployed the Worker, just paste your URL below and you are live right now — no Pages needed to test.</div>
-        <input class="input-worker" id="worker-url-input2" placeholder="https://hustle-worker.YOUR-NAME.workers.dev">
-        <button class="save-worker-btn" onclick="saveWorkerUrl2()" style="background:linear-gradient(135deg,var(--teal),var(--blue))">Activate Now</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 <!-- IMPORT MODAL -->
 <div class="modal-bg" id="import-modal">
   <div class="modal-sheet" style="position:relative">
@@ -984,7 +764,7 @@ body::after {
 <div class="toast" id="toast"></div>
 
 <script>
-const WORKER_URL = 'YOUR_WORKER_URL_HERE';
+const WORKER_URL = 'https://hustle-worker.rtreminio.workers.dev';
 
 let currentType = 'lead';
 let hustles = JSON.parse(localStorage.getItem('hustles') || '[]');
@@ -1955,7 +1735,7 @@ function processImportFile(file) {
 
 // ── CLAUDE API ──
 async function callClaude(system, userMsg, maxTokens = 1500) {
-  const workerUrl = window.WORKER_URL || localStorage.getItem('worker_url') || WORKER_URL;
+  const workerUrl = window.WORKER_URL || WORKER_URL;
   if (!workerUrl || workerUrl === 'YOUR_WORKER_URL_HERE') {
     throw new Error('No worker URL configured');
   }
@@ -1978,53 +1758,8 @@ function toast(msg) {
   setTimeout(() => el.classList.remove('show'), 2500);
 }
 
-// ── SETUP ──
-function showSetupGuide() {
-  showScreen('setup');
-  document.getElementById('setup-banner').style.display = 'none';
-}
-
-function previewWorkerUrl(val) {
-  if (val && val.startsWith('https://')) {
-    document.getElementById('worker-url-input').style.borderColor = 'rgba(0,229,160,0.5)';
-  }
-}
-
-function saveWorkerUrl() {
-  const url = document.getElementById('worker-url-input').value.trim();
-  activateWorker(url);
-}
-
-function saveWorkerUrl2() {
-  const url = document.getElementById('worker-url-input2').value.trim();
-  activateWorker(url);
-}
-
-function activateWorker(url) {
-  if (!url || !url.startsWith('https://')) {
-    toast('Enter a valid https:// Worker URL');
-    return;
-  }
-  window.WORKER_URL = url;
-  localStorage.setItem('worker_url', url);
-  document.getElementById('setup-banner').style.display = 'none';
-  toast('Worker URL saved! Claude AI is now connected.');
-  showHome();
-}
-
 // ── INIT ──
-// Check if worker URL is configured — show setup banner if not
-function checkSetup() {
-  const workerUrl = window.WORKER_URL || localStorage.getItem('worker_url') || WORKER_URL;
-  if (!workerUrl || workerUrl === 'YOUR_WORKER_URL_HERE') {
-    document.getElementById('setup-banner').style.display = 'flex';
-  }
-}
-// Load saved worker URL if exists
-const savedWorker = localStorage.getItem('worker_url');
-if (savedWorker) window.WORKER_URL = savedWorker;
 renderHustles();
-checkSetup();
 </script>
 </body>
 </html>
